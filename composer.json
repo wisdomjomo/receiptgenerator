@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mpdf/mpdf": "^8.1",
+        "mane-olawale/termii": "^1.2",
+        "dompdf/dompdf": "^2.0"
+    }
+}
