@@ -8,6 +8,7 @@ class confi {
     private $amount;
     private $receivername;
     private $accountnumber;
+    private $phonenumber;
     private $bank;
     private $status;
     private $date;
@@ -15,12 +16,13 @@ class confi {
     private $naration;
     private $transferid;
     public $conn;
-    public function __construct($id=0, $sendername="", $amount="", $receivername="", $accountnumber="", $bank="", $status="", $date="", $time="", $naration="", $transferid=""){
+    public function __construct($id=0, $sendername="", $amount="", $receivername="", $accountnumber="", $phonenumber="", $bank="", $status="", $date="", $time="", $naration="", $transferid=""){
         $this->id = $id;
         $this->sendername = $sendername;
         $this->amount =  $amount;
         $this->receivername = $receivername;
         $this->accountnumber =  $accountnumber;
+        $this->phonenumber =  $phonenumber;
         $this->bank = $bank;
         $this->status = $status;
         $this->date =  $date;
@@ -58,6 +60,12 @@ class confi {
     }
     public function getaccountnumber() {
         return $this->accountnumber;
+    }
+    public function setphonenumber($phonenumber) {
+        $this->phonenumber = $phonenumber;
+    }
+    public function getphonenumber() {
+        return $this->phonenumber;
     }
     public function setbank($bank) {
         $this->bank = $bank;
@@ -97,12 +105,13 @@ class confi {
     }
     public function transfermoney() {
         try{
-            $stmt = $this->conn->prepare("INSERT INTO bank (sendername, amount, receivername, accountnumber, bank, status, date, time, naration, transferid) 
-            VALUES (:sendername, :amount, :receivername, :accountnumber, :bank, :status, :date, :time, :naration, :transferid)");
+            $stmt = $this->conn->prepare("INSERT INTO bank (sendername, amount, receivername, accountnumber, phonenumber, bank, status, date, time, naration, transferid) 
+            VALUES (:sendername, :amount, :receivername, :accountnumber, :phonenumber, :bank, :status, :date, :time, :naration, :transferid)");
              $stmt->bindParam(':sendername', $this->sendername);
              $stmt->bindParam(':amount', $this->amount);
              $stmt->bindParam(':receivername', $this->receivername);
              $stmt->bindParam(':accountnumber', $this->accountnumber);
+             $stmt->bindParam(':phonenumber', $this->phonenumber);
              $stmt->bindParam(':bank', $this->bank);
              $stmt->bindParam(':status', $this->status);
              $stmt->bindParam(':date', $this->date);

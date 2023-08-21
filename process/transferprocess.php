@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     trim($sc->setamount($_POST['amount']));
     trim($sc->setreceivername($_POST['receivername']));
     trim($sc->setaccountnumber($_POST['accountnumber']));
+    trim($sc->setphonenumber($_POST['phonenumber']));
     trim($sc->setbank($_POST['bank']));
     trim($sc->setstatus($_POST['status']));
     trim($sc->setdate($_POST['date']));

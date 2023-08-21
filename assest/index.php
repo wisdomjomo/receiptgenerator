@@ -25,7 +25,7 @@ require('header.php');
     	<th>#</th>
       <th>Account Number</th>
       <th>Status</th>
-      <th>Print as PDF</th>
+      <!-- <th>Print as PDF</th> -->
       <th>Downlaod as Image</th>
       <th>Delete</th>
     </tr>
@@ -37,7 +37,7 @@ require('header.php');
       <td style="color:#fff; font-weight:bold;"><?= $counter; ?></td>
       <td style="color:#fff; font-weight:bold;"><?= $dis['accountnumber']; ?></td>
       <td style="color:#fff; font-weight:bold;"><?= $dis['status']; ?></td>
-      <td><a href="../generate_pdf.php?id=<?=$dis['id']?>" target=”_blank”><button style="background-color: #bcbcbc; cursor: pointer; width: 110px; height: 45px; border: none;">Print Reciept</button></a></td>
+      <!-- <td><a href="../generate_pdf.php?id=" target=”_blank”><button style="background-color: #bcbcbc; cursor: pointer; width: 110px; height: 45px; border: none;">Print Reciept</button></a></td> -->
       <!-- <td><button style="background-color: #6fa8dc; cursor: pointer; width: 130px; height: 45px; border: none; color:#fff; font-weight: bold;">Update Receipt</button></td> -->
 	  <td><a href="../transfer.php?id=<?=$dis['id']?>" target=”_blank”><button style="background-color: #bcbcbc; cursor: pointer; width: 110px; height: 45px; border: none;">Download</button></a></td>
 	  <td><a href="../delete/deletegenerator.php?id=<?=$dis['id']?>&reg=delete"><button style="background-color: #eb5959; width: 100px; height: 45px; border: none; color:#fff; font-weight: bold; cursor: pointer;">Delete</button></a></td>

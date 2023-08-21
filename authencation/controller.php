@@ -17,6 +17,10 @@
         $errors["accountnumber"] = "Account Number is required.";
     }
 
+    if (empty($_POST["phonenumber"])) {
+        $errors["phonenumber"] = "Phone Number is required For SMS Alert.";
+    }
+
 	if (empty($_POST["bank"])) {
         $errors["bank"] = "Bank is required.";
     }
@@ -41,9 +45,15 @@
     
     // If there are no errors, process the form
     if (empty($errors)) {
-        $sc->transfermoney();
+       
+        
+        
+
+    $sc->transfermoney();
+
 		header("location:../assest/index.php");
         exit;
+        
     }
 
 
